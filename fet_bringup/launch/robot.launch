@@ -3,6 +3,7 @@
   <arg name="set_lidar_frame_id" default="base_scan"/>
   <arg name="model" default="fet"/>
   <arg name="using_d435i" default="false"/>
+  <arg name="using_rpicam" default="false"/>
 
   <include file="$(find fet_bringup)/launch/core.launch">
     <arg name="multi_robot_name" value="$(arg multi_robot_name)"/>
