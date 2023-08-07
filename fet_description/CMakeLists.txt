@@ -5,6 +5,7 @@ find_package(catkin REQUIRED COMPONENTS
     urdf
     xacro
 )
+
 catkin_package(
     CATKIN_DEPENDS
     urdf

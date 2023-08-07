@@ -2,7 +2,7 @@
   <arg name="model" default="fet"/>
   <arg name="multi_robot_name" default=""/>
 
-  <include file="$(find fet_bringup)/launch/remote.launch">
+  <include file="$(find fet_bringup)/launch/fet_remote.launch">
     <arg name="model" value="$(arg model)" />
     <arg name="multi_robot_name" value="$(arg multi_robot_name)"/>
   </include>
@@ -12,5 +12,5 @@
     <param name="rate" value="50"/>
   </node>
 
-  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find fet_description)/rviz/model.rviz"/>
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find fet_description)/rviz/$(arg model).rviz"/>
 </launch>

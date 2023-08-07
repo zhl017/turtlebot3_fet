@@ -2,7 +2,7 @@
   <arg name="model" default="fet"/>
   <arg name="multi_robot_name" default=""/>
 
-  <include file="$(find fet_bringup)/launch/includes/description.launch.xml">
+  <include file="$(find fet_bringup)/launch/includes/fet_description.launch.xml">
     <arg name="model" value="$(arg model)" />
   </include>
 

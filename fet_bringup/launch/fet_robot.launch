@@ -3,22 +3,23 @@
   <arg name="set_lidar_frame_id" default="base_scan"/>
   <arg name="model" default="fet"/>
   <arg name="using_d435i" default="false"/>
+  <arg name="using_rpicam" default="false"/>
 
-  <include file="$(find fet_bringup)/launch/core.launch">
+  <include file="$(find fet_bringup)/launch/fet_core.launch">
     <arg name="multi_robot_name" value="$(arg multi_robot_name)"/>
   </include>
-  <include file="$(find fet_bringup)/launch/lidar.launch">
+  <include file="$(find fet_bringup)/launch/fet_lidar.launch">
     <arg name="set_frame_id" value="$(arg set_lidar_frame_id)"/>
   </include>
     
   <node pkg="fet_bringup" type="fet_diagnostics" name="fet_diagnostics" output="screen"/>
 
   <group if = "$(arg using_d435i)">
-      <include file="$(find fet_bringup)/launch/d435i_camera.launch"/>
+      <include file="$(find fet_bringup)/launch/fet_d435i_camera.launch"/>
   </group>
 
   <group if = "$(arg using_rpicam)">
-      <include file="$(find fet_bringup)/launch/rpicamera.launch"/>
+      <include file="$(find fet_bringup)/launch/fet_rpicamera.launch"/>
   </group>
 
 </launch>
