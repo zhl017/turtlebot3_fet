@@ -140,32 +140,33 @@ $ source ~/.bashrc
 ## 如何運作
 - **開機**
 1. 於**PC端**，執行ROS Master。
-        ```
-        roscore
-        ```
+```
+roscore
+```
+
 2. 於**PC端**，使用指令遠端至FET。
 > default password : **turtlebot**
-        ```
-        $ ssh ubuntu@ip_address
-        $ roslaunch fet_bringup fet_robot.launch
-        ```
+```
+$ ssh ubuntu@ip_address
+$ roslaunch fet_bringup fet_robot.launch
+```
 
 - **基本遙控**
 1. 於**PC端**，執行遙控範例。
-        ```
-        $ roslaunch fet_teleop fet_teleop_key.launch
-        ```
+```
+$ roslaunch fet_teleop fet_teleop_key.launch
+```
 
 - **SLAM (mapping)**
 1. 於**PC端**，執行SLAM建圖。
-        ```
-        $ roslaunch fet_slam fet_slam.launch
-        ```
+```
+$ roslaunch fet_slam fet_slam.launch
+```
 
 - **Navigation**
 1. 於**PC端**，執行Navigation。
-        ```
-        $ roslaunch fet_navigation fet_navigation.launch
-        ```
+```
+$ roslaunch fet_navigation fet_navigation.launch
+```
   
 其他相關應用請參閱 [官方電子手冊](https://emanual.robotis.com/docs/en/platform/turtlebot3/overview/)。
