@@ -1,0 +1,4 @@
+<launch>
+  <node pkg="fet_example" type="fet_goal_key" name="fet_goal_key" output="screen">
+  </node>
+</launch>

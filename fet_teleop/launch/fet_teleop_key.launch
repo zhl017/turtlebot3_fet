@@ -1,0 +1,9 @@
+<launch>
+  <arg name="model" default="fet"/>
+  <arg name="type" default="w210"/>
+  <param name="model" value="$(arg model)"/>
+  <param name="type" value="$(arg type)"/>
+
+  <node pkg="fet_teleop" type="fet_teleop_key" name="fet_teleop_keyboard"  output="screen"/>
+  
+</launch>
