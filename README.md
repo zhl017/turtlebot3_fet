@@ -5,7 +5,7 @@
 ## 快速安裝手冊
 
 ### 1. 環境設定
-為了測試客製化系列的模型（教學以FET稱呼），需要下列一些配置。
+為了測試客製化系列的模型（下方教學以FET稱呼），需要下列一些配置。
 
 #### 1.1. PC安裝
 
@@ -13,51 +13,51 @@
 
 - [3.1. PC Setup](https://emanual.robotis.com/docs/en/platform/turtlebot3/quick-start/#pc-setup)，目前僅於ROS Noetic版本運行，請於「[快速入門指南](https://emanual.robotis.com/docs/en/platform/turtlebot3/quick-start/)」中上排工具列選擇「**Noetic分支**」進行安裝。
 
-- 更改步驟 [3.1.4. Install TurtelBot3 Packages](https://emanual.robotis.com/docs/en/platform/turtlebot3/quick-start/#install-turtlebot3-packages)
-
-安裝完ROS Noetic後，請輸入下列指令安裝FET相關ROS packages。
-```code
-$ sudo apt remove ros-noetic-turltebot3-msgs
-$ sudo apt remove ros-noetic-turtlebot3
-$ mkdir -p ~/catkin_ws/src
-$ cd ~/catkin_ws/src
-$ git clone https://github.com/zhl017/turtlebot3_fet
-$ git clone https://github.com/zhl017/turtlebot3_msgs_idminer_custom
-$ cd ~/catkin_ws && catkin_make
-$ echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
-$ source ~/.bashrc
-```
+- 更改步驟 [3.1.4. Install TurtelBot3 Packages](https://emanual.robotis.com/docs/en/platform/turtlebot3/quick-start/#install-turtlebot3-packages)，輸入下方指令安裝相關ROS packages。**(需連接網路)**
+    ```
+    $ sudo apt remove ros-noetic-turltebot3-msgs
+    $ sudo apt remove ros-noetic-turtlebot3
+    $ mkdir -p ~/catkin_ws/src
+    $ cd ~/catkin_ws/src
+    $ git clone https://github.com/zhl017/turtlebot3_fet
+    $ git clone https://github.com/zhl017/turtlebot3_msgs_idminer_custom
+    $ cd ~/catkin_ws && catkin_make
+    $ echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
+    $ source ~/.bashrc
+    ```
 
 #### 1.2. SBC安裝（若出廠已安裝好系統可以不用再次安裝SBC)
-> user id  : ubuntu   |   password : turtlebot
+> 使用者名稱 : ubuntu  
+> 使用者密碼 : turtlebot
+- Raspberry Pi 映像檔：(待更新)
 
 - [3.2. SBC Setup](https://emanual.robotis.com/docs/en/platform/turtlebot3/sbc_setup/#sbc-setup)，FET使用Raspberry Pi 4B作為車體主機，目前僅於ROS Noetic版本運行，請於「[快速入門指南](https://emanual.robotis.com/docs/en/platform/turtlebot3/quick-start/)」中上排工具列選擇「**Noetic分支**」進行安裝。
 
-安裝完映像檔後，開啟電源進入系統後，請輸入下列指令安裝FET相關ROS packages。
-```code
-$ sudo apt remove ros-noetic-turltebot3-msgs
-$ sudo apt remove ros-noetic-turtlebot3
-$ sudo rm -r catkin_ws
-$ mkdir -p ~/caktin_ws/src
-$ cd ~/catkin_ws/src
-$ git clone https://github.com/zhl017/turtlebot3_fet
-$ cd ~/catkin_ws/src/turtlebot3_fet
-$ sudo rm -r fet_description/ fet_teleop/ fet_navigation/ fet_slam/ fet_example/
-$ git clone https://github.com/zhl017/turtlebot3_msgs_idminer_custom
-$ cd ~/catkin_ws && catkin_make -j1
-$ source ~/.bashrc
-```
+- 安裝完映像檔後，遠端進入SBC並輸入下方指令安裝相關ROS packages。**(需連接網路)**
+    ```
+    $ sudo apt remove ros-noetic-turltebot3-msgs
+    $ sudo apt remove ros-noetic-turtlebot3
+    $ sudo rm -r catkin_ws
+    $ mkdir -p ~/caktin_ws/src
+    $ cd ~/catkin_ws/src
+    $ git clone https://github.com/zhl017/turtlebot3_fet
+    $ cd ~/catkin_ws/src/turtlebot3_fet
+    $ sudo rm -r fet_description/ fet_teleop/ fet_navigation/ fet_slam/ fet_example/
+    $ git clone https://github.com/zhl017/turtlebot3_msgs_idminer_custom
+    $ cd ~/catkin_ws && catkin_make -j1
+    $ source ~/.bashrc
+    ```
 
 #### 1.3. OpenCR安裝
 
-- 待更新...
+- 待更新
 
 ### 2. 網路設定
 
 第一次連接可透過**wifi連接**或是**網路線連接**來遠端進入FET中進行網路設定。
 
 #### 2.1. wifi連接
-我們使用Raspberry Pi 作為WiFi熱點。請使用PC進行連接。
+我們使用Raspberry Pi 作為WiFi熱點，請使用PC進行連接。
 > ssid : **TurtleBot_FET**  
 > password : **turtlebot**
 
@@ -66,8 +66,13 @@ $ source ~/.bashrc
     $ ifconfig
     ```
     可以看到類似 ```10.42.0.XXX``` 的IP型態。
-
-2. 遠端進入FET並輸入密碼turtlebot。
+    
+2. 檢查是否與FET互通。
+    ```
+    $ ping 10.42.0.1
+    ```
+    
+3. 遠端進入FET並輸入密碼**turtlebot**。
     ```
     $ ssh ubuntu@10.42.0.1
     ```
@@ -88,8 +93,13 @@ $ source ~/.bashrc
     $ ifconfig
     ```
     確認是否有看到 ```192.168.123.2``` 的IP型態。
+    
+3. 檢查是否與FET互通。
+    ```
+    $ ping 192.168.123.1
+    ```
 
-3. 遠端進入FET並輸入密碼turtlebot。
+4. 遠端進入FET並輸入密碼**turtlebot**。
     ```
     $ ssh ubuntu@192.168.123.1
 
@@ -115,19 +125,25 @@ $ source ~/.bashrc
     ```
     $ nano ~/.bashrc
     ```
-    透過使用快捷鍵 ```alt+/``` 幫助您移動到文件最底部。並寫下下列訊息
+    透過使用快捷鍵 ```alt+/``` 幫助您移動到文件最底部，並寫下下列訊息。
 
     1.1 PC
       ```
-      export ROS_MASTER_URI=http://PC的IP:11311
-      export ROS_HOSTNAME=PC的IP
+      export ROS_MASTER_URI=http://PC_IP:11311
+      export ROS_HOSTNAME=PC_IP
       ```
+      >example. PC_IP = 10.1.10.2  
+      >export ROS_MATER_URI=http://10.1.10.2:11311  
+      >export ROS_HOSTNAME=10.1.10.2
 
     1.2 SBC
       ```
-      export ROS_MASTER_URI=http://PC的IP:11311
-      export ROS_HOSTNAME=SBC的IP
+      export ROS_MASTER_URI=http://PC_IP:11311
+      export ROS_HOSTNAME=SBC_IP
       ```
+      >example. SBC_IP = 10.1.10.5  
+      >export ROS_MATER_URI=http://10.1.10.2:11311  
+      >export ROS_HOSTNAME=10.1.10.5
    
     
 3. 確認修改完畢後使用快捷鍵 ```ctrl+s``` 儲存以及快捷鍵 ```ctrl+x``` 離開。
@@ -138,35 +154,36 @@ $ source ~/.bashrc
     ```
 
 ## 如何運作
-- **開機**
+- **開機**  
+確認PC與SBC都連到相同的網路且bashrc檔案已設定完畢。
+
 1. 於**PC端**，執行ROS Master。
-```
-roscore
-```
+    ```
+    roscore
+    ```
 
 2. 於**PC端**，使用指令遠端至FET。
-> default password : **turtlebot**
-```
-$ ssh ubuntu@ip_address
-$ roslaunch fet_bringup fet_robot.launch
-```
+    ```
+    $ ssh ubuntu@sbc_ip_address    # password : turtlebot
+    $ roslaunch fet_bringup fet_robot.launch
+    ```
 
 - **基本遙控**
 1. 於**PC端**，執行遙控範例。
-```
-$ roslaunch fet_teleop fet_teleop_key.launch
-```
+    ```
+    $ roslaunch fet_teleop fet_teleop_key.launch
+    ```
 
-- **SLAM (mapping)**
+- **SLAM (gmapping)**
 1. 於**PC端**，執行SLAM建圖。
-```
-$ roslaunch fet_slam fet_slam.launch
-```
+    ```
+    $ roslaunch fet_slam fet_slam.launch
+    ```
 
 - **Navigation**
 1. 於**PC端**，執行Navigation。
-```
-$ roslaunch fet_navigation fet_navigation.launch
-```
+    ```
+    $ roslaunch fet_navigation fet_navigation.launch
+    ```
   
 其他相關應用請參閱 [官方電子手冊](https://emanual.robotis.com/docs/en/platform/turtlebot3/overview/)。
