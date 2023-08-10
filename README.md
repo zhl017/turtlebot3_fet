@@ -20,7 +20,7 @@
     $ mkdir -p ~/catkin_ws/src
     $ cd ~/catkin_ws/src
     $ git clone https://github.com/zhl017/turtlebot3_fet
-    $ git clone https://github.com/zhl017/turtlebot3_msgs_idminer_custom
+    $ git clone https://github.com/zhl017/turtlebot3_msgs_idm_custom
     $ cd ~/catkin_ws && catkin_make
     $ echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
     $ source ~/.bashrc
@@ -43,7 +43,7 @@
     $ git clone https://github.com/zhl017/turtlebot3_fet
     $ cd ~/catkin_ws/src/turtlebot3_fet
     $ sudo rm -r fet_description/ fet_teleop/ fet_navigation/ fet_slam/ fet_example/
-    $ git clone https://github.com/zhl017/turtlebot3_msgs_idminer_custom
+    $ git clone https://github.com/zhl017/turtlebot3_msgs_idm_custom
     $ cd ~/catkin_ws && catkin_make -j1
     $ source ~/.bashrc
     ```
