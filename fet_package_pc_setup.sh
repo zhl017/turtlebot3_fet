@@ -17,7 +17,7 @@ sudo apt remove ros-noetic-turtlebot3-msgs
 sudo apt remove ros-noetic-turtlebot3
 mkdir -p $HOME/$name_catkin_workspace/src
 cd $HOME/$name_catkin_workspace/src
-git clone -b https://github.com/zhl017/turtlebot3_fet
+git clone https://github.com/zhl017/turtlebot3_fet
 git clone https://github.com/zhl017/turtlebot3_msgs_idm_custom
 cd $HOME/$name_catkin_workspace
 catkin_make
