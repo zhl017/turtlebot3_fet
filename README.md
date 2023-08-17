@@ -18,7 +18,7 @@
   - 腳本安裝（package會安裝於catkin_ws底下）
  
     ```
-    $ wget https://raw.githubusercontent.com/zhl017/turtlebot3_fet/fet_package_pc_setup.sh
+    $ wget https://raw.githubusercontent.com/zhl017/turtlebot3_fet/master/fet_package_pc_setup.sh
     $ chmod +x fet_package_pc_setup.sh
     $ ./fet_package_pc_setup.sh
     ```
@@ -49,7 +49,7 @@
   - 腳本安裝（package會安裝於catkin_ws底下）
  
     ```
-    $ wget https://raw.githubusercontent.com/zhl017/turtlebot3_fet/fet_package_sbc_setup.sh
+    $ wget https://raw.githubusercontent.com/zhl017/turtlebot3_fet/master/fet_package_sbc_setup.sh
     $ chmod +x fet_package_sbc_setup.sh
     $ ./fet_package_sbc_setup.sh
     ```
