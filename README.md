@@ -16,7 +16,7 @@
   - [Ubuntu 20.04 LTS Desktop image (64-bit)](https://releases.ubuntu.com/20.04/ubuntu-20.04.6-desktop-amd64.iso)
   - 詳細Ubuntu步驟請參考[Ubuntu官方教學](https://www.ubuntu.com/download/desktop/install-ubuntu-desktop)。
 
-- 安裝ROS noetic。**(需連接網路)**
+- 使用腳本安裝ROS noetic。**(需連接網路)**
 
     ```
     $ sudo apt update
