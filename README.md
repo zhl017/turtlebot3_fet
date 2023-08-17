@@ -1,6 +1,6 @@
 # TurtleBot3 Customization : FET  
 
-> 馬達 ： XM430-W210-T | linear : 0.40 | angular : 2.0
+- 馬達 ： XM430-W210-T | linear : 0.40 | angular : 2.0
 
 ## 快速安裝手冊
 
@@ -13,7 +13,18 @@
 
 - [3.1. PC Setup](https://emanual.robotis.com/docs/en/platform/turtlebot3/quick-start/#pc-setup)，目前僅於ROS Noetic版本運行，請於「[快速入門指南](https://emanual.robotis.com/docs/en/platform/turtlebot3/quick-start/)」中上排工具列選擇「**Noetic分支**」進行安裝。
 
-- 更改步驟 [3.1.4. Install TurtelBot3 Packages](https://emanual.robotis.com/docs/en/platform/turtlebot3/quick-start/#install-turtlebot3-packages)，輸入下方指令安裝相關ROS packages。**(需連接網路)**
+- 更改步驟 [3.1.4. Install TurtelBot3 Packages](https://emanual.robotis.com/docs/en/platform/turtlebot3/quick-start/#install-turtlebot3-packages)，選擇下列方式安裝相關ROS packages。**(需連接網路)**
+
+  - 腳本安裝（package會安裝於catkin_ws底下）
+ 
+    ```
+    $ wget https://raw.githubusercontent.com/zhl017/turtlebot3_fet/fet_package_pc_setup.sh
+    $ chmod +x fet_package_pc_setup.sh
+    $ ./fet_package_pc_setup.sh
+    ```
+
+  - 指令安裝
+
     ```
     $ sudo apt remove ros-noetic-turltebot3-msgs
     $ sudo apt remove ros-noetic-turtlebot3
@@ -33,7 +44,18 @@
 
 - [3.2. SBC Setup](https://emanual.robotis.com/docs/en/platform/turtlebot3/sbc_setup/#sbc-setup)，FET使用Raspberry Pi 4B作為車體主機，目前僅於ROS Noetic版本運行，請於「[快速入門指南](https://emanual.robotis.com/docs/en/platform/turtlebot3/quick-start/)」中上排工具列選擇「**Noetic分支**」進行安裝。
 
-- 安裝完映像檔後，遠端進入SBC並輸入下方指令安裝相關ROS packages。**(需連接網路)**
+- 安裝完映像檔後，遠端進入SBC並選擇下列方式安裝相關ROS packages。**(需連接網路)**
+
+  - 腳本安裝（package會安裝於catkin_ws底下）
+ 
+    ```
+    $ wget https://raw.githubusercontent.com/zhl017/turtlebot3_fet/fet_package_sbc_setup.sh
+    $ chmod +x fet_package_sbc_setup.sh
+    $ ./fet_package_sbc_setup.sh
+    ```
+
+  - 指令安裝
+    
     ```
     $ sudo apt remove ros-noetic-turltebot3-msgs
     $ sudo apt remove ros-noetic-turtlebot3
@@ -41,9 +63,10 @@
     $ mkdir -p ~/caktin_ws/src
     $ cd ~/catkin_ws/src
     $ git clone https://github.com/zhl017/turtlebot3_fet
+    $ git clone https://github.com/zhl017/turtlebot3_msgs_idm_custom
+    $ git clone -b develop https://github.com/ROBOTIS-GIT/ld08_driver.git
     $ cd ~/catkin_ws/src/turtlebot3_fet
     $ sudo rm -r fet_description/ fet_teleop/ fet_navigation/ fet_slam/ fet_example/
-    $ git clone https://github.com/zhl017/turtlebot3_msgs_idm_custom
     $ cd ~/catkin_ws && catkin_make -j1
     $ source ~/.bashrc
     ```
