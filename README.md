@@ -26,7 +26,7 @@
     $ source ~/.bashrc
     ```
 
-#### 1.2. SBC安裝（若出廠已安裝好系統可以不用再次安裝SBC)
+#### 1.2. SBC安裝（此步驟提供給自行安裝系統者，若出廠已安裝好系統可以跳過此步驟。）
 > 使用者名稱 : ubuntu  
 > 使用者密碼 : turtlebot
 - Raspberry Pi 映像檔：(待更新)
@@ -48,9 +48,41 @@
     $ source ~/.bashrc
     ```
 
-#### 1.3. OpenCR安裝
+#### 1.3. OpenCR安裝（此步驟提供給自行安裝系統者，若出廠已安裝好系統可以跳過此步驟。)
 
-- 待更新
+- 將OpenCR連接上Raspberry Pi或PC上。
+
+- 首次安裝可下載相關套件。
+
+   ```
+   $ sudo dpkg --add-architecture armhf
+   $ sudo apt-get update
+   $ sudo apt-get install libc6:armhf
+   ```
+
+- 設定板子窗口、型號，及刪除先前更新韌體包。
+
+   ```
+   $ export OPENCR_PORT=/dev/ttyACM0
+   $ export OPENCR_MODEL=fet
+   $ rm -rf ./opencr_update.tar.bz2
+   ```
+
+- 下載新的韌體包並解壓縮。
+
+   ```
+   $ wget https://github.com/zhl017/OpenCR-Binaries/raw/idm-devel/turtlebot3_idm_custom/ROS1/latest/opencr_update.tar.bz2
+   $ tar -xvf opencr_update.tar.bz2
+   ```
+
+- 上傳文件至OpenCR。
+
+   ```
+   $ cd ./opencr_update
+   $ ./update.sh $OPENCR_PORT $OPENCR_MODEL.opencr
+   ```
+
+- 確認終端機顯示 `[OK] jump_to_fw` 字樣表示燒入成功。
 
 ### 2. 網路設定
 
