@@ -9,11 +9,37 @@
 
 #### 1.1. PC安裝
 
-請遵照TurtleBot3官方電子手冊「[快速入門指南](https://emanual.robotis.com/docs/en/platform/turtlebot3/quick-start/)」進行安裝並留意下列步驟更改事項。
+本安裝參考TurtleBot3官方電子手冊「[快速入門指南](https://emanual.robotis.com/docs/en/platform/turtlebot3/quick-start/)」。
 
-- [3.1. PC Setup](https://emanual.robotis.com/docs/en/platform/turtlebot3/quick-start/#pc-setup)，目前僅於ROS Noetic版本運行，請於「[快速入門指南](https://emanual.robotis.com/docs/en/platform/turtlebot3/quick-start/)」中上排工具列選擇「**Noetic分支**」進行安裝。
+- 在PC下載並安裝Ubuntu20.04。
 
-- 更改步驟 [3.1.4. Install TurtelBot3 Packages](https://emanual.robotis.com/docs/en/platform/turtlebot3/quick-start/#install-turtlebot3-packages)，選擇下列方式安裝相關ROS packages。**(需連接網路)**
+  - [Ubuntu 20.04 LTS Desktop image (64-bit)](https://releases.ubuntu.com/20.04/ubuntu-20.04.6-desktop-amd64.iso)
+  - 詳細Ubuntu步驟請參考[Ubuntu官方教學](https://www.ubuntu.com/download/desktop/install-ubuntu-desktop)。
+
+- 安裝ROS noetic。**(需連接網路)**
+
+    ```
+    $ sudo apt update
+    $ sudo apt upgrade
+    $ wget https://raw.githubusercontent.com/ROBOTIS-GIT/robotis_tools/master/install_ros_noetic.sh
+    $ chmod 755 ./install_ros_noetic.sh 
+    $ bash ./install_ros_noetic.sh
+    ```
+
+- 安裝相關依賴ROS packages。**(需連接網路)**
+
+  ```
+  $ sudo apt-get install ros-noetic-joy ros-noetic-teleop-twist-joy \
+  ros-noetic-teleop-twist-keyboard ros-noetic-laser-proc \
+  ros-noetic-rgbd-launch ros-noetic-rosserial-arduino \
+  ros-noetic-rosserial-python ros-noetic-rosserial-client \
+  ros-noetic-rosserial-msgs ros-noetic-amcl ros-noetic-map-server \
+  ros-noetic-move-base ros-noetic-urdf ros-noetic-xacro \
+  ros-noetic-compressed-image-transport ros-noetic-rqt* ros-noetic-rviz \
+  ros-noetic-gmapping ros-noetic-navigation ros-noetic-interactive-markers
+  ```
+    
+- 選擇下列方式安裝FET ROS packages。**(需連接網路)**
 
   - 腳本安裝（package會安裝於catkin_ws底下）
  
