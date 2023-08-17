@@ -15,6 +15,7 @@ name_catkin_workspace=${name_catkin_workspace:="catkin_ws"}
 echo "[Make the catkin workspace and test the catkin_make]"
 sudo apt remove ros-noetic-turtlebot3-msgs 
 sudo apt remove ros-noetic-turtlebot3
+sudo rm -r $HOME/$name_catkin_workspace
 mkdir -p $HOME/$name_catkin_workspace/src
 cd $HOME/$name_catkin_workspace/src
 git clone https://github.com/zhl017/turtlebot3_fet
