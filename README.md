@@ -9,7 +9,7 @@
 
 #### 1.1. PC安裝
 
-PC安裝可選擇直接安裝Ubuntu環境或在windows底下使用虛擬機安裝Ubuntu。
+可選擇直接安裝Ubuntu環境或在windows底下使用虛擬機安裝Ubuntu。
 
 - 在windows底下使用虛擬機安裝Ubuntu。
 
