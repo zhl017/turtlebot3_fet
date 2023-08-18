@@ -83,7 +83,7 @@
 
   ![](https://github.com/ROBOTIS-GIT/emanual/blob/master/assets/images/platform/turtlebot3/setup/rpi_imager.gif)  
   
-- 安裝完映像檔後，遠端進入SBC並選擇下列方式安裝相關ROS packages。**(需連接網路)**
+- 開機後遠端進入SBC並選擇下列方式安裝相關ROS packages。**(需連接網路)**
 
   - 腳本安裝（package會安裝於catkin_ws底下）
  
