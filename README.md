@@ -77,10 +77,12 @@
 #### 1.2. SBC安裝（此步驟提供給自行安裝系統者，若出廠已安裝好系統可以跳過此步驟。）
 > 使用者名稱 : ubuntu  
 > 使用者密碼 : turtlebot
-- Raspberry Pi 映像檔：(待更新)
+- 下載[Raspberry Pi映像檔](https://mega.nz/file/URkH2JDI#WpM04Y0Ol83TZz5XpjYXLJRageGnoA6knvVO7DxFLqs)。
 
-- [3.2. SBC Setup](https://emanual.robotis.com/docs/en/platform/turtlebot3/sbc_setup/#sbc-setup)，FET使用Raspberry Pi 4B作為車體主機，目前僅於ROS Noetic版本運行，請於「[快速入門指南](https://emanual.robotis.com/docs/en/platform/turtlebot3/quick-start/)」中上排工具列選擇「**Noetic分支**」進行安裝。
+- 燒入Raspbeery Pi映像檔。
 
+  ![](https://github.com/ROBOTIS-GIT/emanual/blob/master/assets/images/platform/turtlebot3/setup/rpi_imager.gif)  
+  
 - 安裝完映像檔後，遠端進入SBC並選擇下列方式安裝相關ROS packages。**(需連接網路)**
 
   - 腳本安裝（package會安裝於catkin_ws底下）
