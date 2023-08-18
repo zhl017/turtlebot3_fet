@@ -45,8 +45,8 @@
  
     ```
     $ wget https://raw.githubusercontent.com/zhl017/omiyage/main/Setup_script/turtlebot3_fet/pc_setup.sh
-    $ chmod +x fet_package_pc_setup.sh
-    $ ./fet_package_pc_setup.sh
+    $ chmod +x pc_setup.sh
+    $ ./pc_setup.sh
     ```
 
   - 指令安裝
@@ -76,8 +76,8 @@
  
     ```
     $ wget https://raw.githubusercontent.com/zhl017/omiyage/main/Setup_script/turtlebot3_fet/sbc_setup.sh
-    $ chmod +x fet_package_sbc_setup.sh
-    $ ./fet_package_sbc_setup.sh
+    $ chmod +x sbc_setup.sh
+    $ ./sbc_setup.sh
     ```
 
   - 指令安裝
