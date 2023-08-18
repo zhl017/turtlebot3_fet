@@ -9,6 +9,8 @@
 
 #### 1.1. PC安裝
 
+##### 1.1.1 Ubuntu安裝
+
 可選擇直接安裝Ubuntu環境或在windows底下使用虛擬機安裝Ubuntu。
 
 - 在windows底下使用虛擬機安裝Ubuntu。
@@ -33,7 +35,8 @@
       $ chmod 755 ./install_ros_noetic.sh 
       $ bash ./install_ros_noetic.sh
       ```
-  
+##### 1.1.2 ROS相關packages安裝
+
 - 安裝相關依賴ROS packages。**(需連接網路)**
 
   ```
