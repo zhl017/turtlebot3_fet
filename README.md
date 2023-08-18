@@ -197,15 +197,18 @@
 
 #### 2.3. 設定FET連接wifi環境
 1. 開啟wifi設定檔案。
-    ```
-    sudo nano /etc/netplan/50-cloud-init.yaml
-    ````
 
-2. 輸入想連接的wifi裝置與密碼，請參考[官方手冊](https://emanual.robotis.com/docs/en/platform/turtlebot3/sbc_setup/#configure-the-wifi-network-setting-1)。
+   ```
+   sudo nano /etc/netplan/50-cloud-init.yaml
+   ````
 
-3. 確認修改完畢後使用快捷鍵 ```ctrl+s``` 儲存以及快捷鍵 ```ctrl+x``` 離開。
+2. 輸入想連接的wifi裝置與密碼。
 
-4. 輸入指令重新載入配置。
+   ![](https://github.com/ROBOTIS-GIT/emanual/blob/master/assets/images/platform/turtlebot3/setup/ros2_sbc_netcfg.png)
+
+4. 確認修改完畢後使用快捷鍵 ```ctrl+s``` 儲存以及快捷鍵 ```ctrl+x``` 離開。
+
+5. 輸入指令重新載入配置。
     ```
     $ sudo netplan apply
     ```
@@ -219,7 +222,8 @@
     ```
     透過使用快捷鍵 ```alt+/``` 幫助您移動到文件最底部，並寫下下列訊息。
 
-    1.1 PC
+    - PC端
+  
       ```
       export ROS_MASTER_URI=http://PC_IP:11311
       export ROS_HOSTNAME=PC_IP
@@ -228,7 +232,8 @@
       >export ROS_MATER_URI=http://10.1.10.2:11311  
       >export ROS_HOSTNAME=10.1.10.2
 
-    1.2 SBC
+    - SBC端
+      
       ```
       export ROS_MASTER_URI=http://PC_IP:11311
       export ROS_HOSTNAME=SBC_IP
