@@ -1,5 +1,6 @@
-# TurtleBot3 Customization : FET  
 
+![](https://emanual.robotis.com/assets/images/platform/turtlebot3/overview/turtlebot3_with_logo.png)
+# TurtleBot3 Customization : FET  
 - 馬達 ： XM430-W210-T | linear : 0.40 | angular : 2.0
 
 ## 快速安裝手冊
