@@ -1,7 +1,11 @@
-
-![](https://emanual.robotis.com/assets/images/platform/turtlebot3/overview/turtlebot3_with_logo.png)
 # TurtleBot3 Customization : FET  
-- 馬達 ： XM430-W210-T | linear : 0.40 | angular : 2.0
+<img src="https://github.com/ROBOTIS-GIT/emanual/blob/master/assets/images/platform/turtlebot3/logo_turtlebot3.png" width="300">
+
+## 規格
+
+- 使用馬達：XM430-W210-T
+- 最大線性速度：0.40 m/s
+- 最大角速度：1.25 rad/s
 
 ## 快速安裝手冊
 
