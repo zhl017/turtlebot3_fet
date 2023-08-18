@@ -18,8 +18,6 @@
   - [請參考vmware匯入教學](https://github.com/zhl017/omiyage/blob/main/Documents/vmware%E5%8C%AF%E5%85%A5%E6%95%99%E5%AD%B8.md)。
 
 - 直接安裝Ubuntu環境。
-
-  本安裝參考TurtleBot3官方電子手冊「[快速入門指南](https://emanual.robotis.com/docs/en/platform/turtlebot3/quick-start/)」。
   
   - 在PC下載並安裝Ubuntu20.04。
   
@@ -280,4 +278,4 @@
     $ roslaunch fet_navigation fet_navigation.launch
     ```
   
-其他相關應用請參閱 [官方電子手冊](https://emanual.robotis.com/docs/en/platform/turtlebot3/overview/)。
+更多詳細資訊請參閱[官方電子手冊](https://emanual.robotis.com/docs/en/platform/turtlebot3/overview/)。
