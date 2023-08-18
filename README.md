@@ -9,59 +9,67 @@
 
 #### 1.1. PC安裝
 
-本安裝參考TurtleBot3官方電子手冊「[快速入門指南](https://emanual.robotis.com/docs/en/platform/turtlebot3/quick-start/)」。
+PC安裝可選擇直接安裝Ubuntu環境或在windows底下使用虛擬機安裝Ubuntu。
 
-- 在PC下載並安裝Ubuntu20.04。
+- 在windows底下使用虛擬機安裝Ubuntu。
 
-  - [Ubuntu 20.04 LTS Desktop image (64-bit)](https://releases.ubuntu.com/20.04/ubuntu-20.04.6-desktop-amd64.iso)
-  - 詳細Ubuntu步驟請參考[Ubuntu官方教學](https://www.ubuntu.com/download/desktop/install-ubuntu-desktop)。
+  - [請參考vmware匯入教學](https://github.com/zhl017/omiyage/blob/main/Documents/vmware%E5%8C%AF%E5%85%A5%E6%95%99%E5%AD%B8.md)。
 
-- 使用腳本安裝ROS noetic。**(需連接網路)**
+- 直接安裝Ubuntu環境。
 
+  本安裝參考TurtleBot3官方電子手冊「[快速入門指南](https://emanual.robotis.com/docs/en/platform/turtlebot3/quick-start/)」。
+  
+  - 在PC下載並安裝Ubuntu20.04。
+  
+    - [Ubuntu 20.04 LTS Desktop image (64-bit)](https://releases.ubuntu.com/20.04/ubuntu-20.04.6-desktop-amd64.iso)
+    - 詳細Ubuntu步驟請參考[Ubuntu官方教學](https://www.ubuntu.com/download/desktop/install-ubuntu-desktop)。
+  
+  - 使用腳本安裝ROS noetic。**(需連接網路)**
+  
+      ```
+      $ sudo apt update
+      $ sudo apt upgrade
+      $ wget https://raw.githubusercontent.com/ROBOTIS-GIT/robotis_tools/master/install_ros_noetic.sh
+      $ chmod 755 ./install_ros_noetic.sh 
+      $ bash ./install_ros_noetic.sh
+      ```
+  
+  - 安裝相關依賴ROS packages。**(需連接網路)**
+  
     ```
-    $ sudo apt update
-    $ sudo apt upgrade
-    $ wget https://raw.githubusercontent.com/ROBOTIS-GIT/robotis_tools/master/install_ros_noetic.sh
-    $ chmod 755 ./install_ros_noetic.sh 
-    $ bash ./install_ros_noetic.sh
+    $ sudo apt-get install ros-noetic-joy ros-noetic-teleop-twist-joy \
+    ros-noetic-teleop-twist-keyboard ros-noetic-laser-proc \
+    ros-noetic-rgbd-launch ros-noetic-rosserial-arduino \
+    ros-noetic-rosserial-python ros-noetic-rosserial-client \
+    ros-noetic-rosserial-msgs ros-noetic-amcl ros-noetic-map-server \
+    ros-noetic-move-base ros-noetic-urdf ros-noetic-xacro \
+    ros-noetic-compressed-image-transport ros-noetic-rqt* ros-noetic-rviz \
+    ros-noetic-gmapping ros-noetic-navigation ros-noetic-interactive-markers
     ```
-
-- 安裝相關依賴ROS packages。**(需連接網路)**
-
-  ```
-  $ sudo apt-get install ros-noetic-joy ros-noetic-teleop-twist-joy \
-  ros-noetic-teleop-twist-keyboard ros-noetic-laser-proc \
-  ros-noetic-rgbd-launch ros-noetic-rosserial-arduino \
-  ros-noetic-rosserial-python ros-noetic-rosserial-client \
-  ros-noetic-rosserial-msgs ros-noetic-amcl ros-noetic-map-server \
-  ros-noetic-move-base ros-noetic-urdf ros-noetic-xacro \
-  ros-noetic-compressed-image-transport ros-noetic-rqt* ros-noetic-rviz \
-  ros-noetic-gmapping ros-noetic-navigation ros-noetic-interactive-markers
-  ```
-    
-- 選擇下列方式安裝FET ROS packages。**(需連接網路)**
-
-  - 腳本安裝（package會安裝於catkin_ws底下）
- 
-    ```
-    $ wget https://raw.githubusercontent.com/zhl017/omiyage/main/Setup_script/turtlebot3_fet/pc_setup.sh
-    $ chmod +x pc_setup.sh
-    $ ./pc_setup.sh
-    ```
-
-  - 指令安裝
-
-    ```
-    $ sudo apt remove ros-noetic-turltebot3-msgs
-    $ sudo apt remove ros-noetic-turtlebot3
-    $ mkdir -p ~/catkin_ws/src
-    $ cd ~/catkin_ws/src
-    $ git clone https://github.com/zhl017/turtlebot3_fet
-    $ git clone https://github.com/zhl017/turtlebot3_msgs_idm_custom
-    $ cd ~/catkin_ws && catkin_make
-    $ echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
-    $ source ~/.bashrc
-    ```
+      
+  - 選擇下列方式安裝FET ROS packages。**(需連接網路)**
+  
+    - 腳本安裝（package會安裝於catkin_ws底下）
+   
+      ```
+      $ wget https://raw.githubusercontent.com/zhl017/omiyage/main/Setup_script/turtlebot3_fet/pc_setup.sh
+      $ chmod +x pc_setup.sh
+      $ ./pc_setup.sh
+      ```
+  
+    - 指令安裝
+  
+      ```
+      $ sudo apt remove ros-noetic-turltebot3-msgs
+      $ sudo apt remove ros-noetic-turtlebot3
+      $ mkdir -p ~/catkin_ws/src
+      $ cd ~/catkin_ws/src
+      $ git clone https://github.com/zhl017/turtlebot3_fet
+      $ git clone https://github.com/zhl017/turtlebot3_msgs_idm_custom
+      $ cd ~/catkin_ws && catkin_make
+      $ echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
+      $ source ~/.bashrc
+      ```
 
 #### 1.2. SBC安裝（此步驟提供給自行安裝系統者，若出廠已安裝好系統可以跳過此步驟。）
 > 使用者名稱 : ubuntu  
