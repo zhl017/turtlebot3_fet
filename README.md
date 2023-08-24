@@ -55,12 +55,10 @@
     
 - 選擇下列方式安裝FET ROS packages。**(需連接網路)**
 
-  - 腳本安裝（package會安裝於catkin_ws底下）
+  - 腳本安裝（package會安裝於catkin_ws/src底下，若想安裝在其他workspace，請使用指令安裝另外創立worksapce。）
  
     ```
-    $ wget https://raw.githubusercontent.com/zhl017/omiyage/main/Setup_script/turtlebot3_fet/pc_setup.sh
-    $ chmod +x pc_setup.sh
-    $ ./pc_setup.sh
+    $ wget https://raw.githubusercontent.com/zhl017/omiyage/main/Setup_script/turtlebot3_fet/pc_setup.sh && chmod +x pc_setup.sh && ./pc_setup.sh && rm pc_setup.sh
     ```
 
   - 指令安裝
@@ -88,12 +86,10 @@
   
 - 開機後遠端進入SBC並選擇下列方式安裝相關ROS packages。**(需連接網路)**
 
-  - 腳本安裝（package會安裝於catkin_ws底下）
+  - 腳本安裝（package會安裝於catkin_ws/src底下，若想安裝在其他workspace，請使用指令安裝另外創立worksapce。）
  
     ```
-    $ wget https://raw.githubusercontent.com/zhl017/omiyage/main/Setup_script/turtlebot3_fet/sbc_setup.sh
-    $ chmod +x sbc_setup.sh
-    $ ./sbc_setup.sh
+    $ wget https://raw.githubusercontent.com/zhl017/omiyage/main/Setup_script/turtlebot3_fet/sbc_setup.sh && chmod +x sbc_setup.sh && ./sbc_setup.sh && rm sbc_setup.sh
     ```
 
   - 指令安裝
@@ -285,7 +281,7 @@
 - **Navigation**
 1. 於**PC端**，執行Navigation。
     ```
-    $ roslaunch fet_navigation fet_navigation.launch
+    $ roslaunch fet_navigation fet_navigation.launch map_file:=$(map_file_path)
     ```
   
 更多詳細資訊請參閱[官方電子手冊](https://emanual.robotis.com/docs/en/platform/turtlebot3/overview/)。
