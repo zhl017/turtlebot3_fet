@@ -75,7 +75,7 @@
 
 - 燒入Raspbeery Pi映像檔。
 
-  ![](https://github.com/ROBOTIS-GIT/emanual/blob/master/assets/images/platform/turtlebot3/setup/rpi_imager.gif)  
+  ![](https://github.com/ROBOTIS-GIT/emanual/blob/master/assets/images/platform/turtlebot3/quick_start/sbc_setup/rpi_imager.gif)  
   
 - 開機後遠端進入SBC並選擇下列方式安裝相關ROS packages。**(需連接網路)**
 
